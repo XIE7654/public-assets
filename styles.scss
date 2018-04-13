@@ -1,0 +1,18 @@
+body,html {
+  height: 100%
+}
+body,button,div,fieldset,form,h1,h2,h3,h4,h5,h6,i,img,input,label,legend,li,dl,ol,p,table,td,th,tr,ul {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+h1,h2,h3,h4,h5,h6,p,body {
+  font-family: "Microsoft YaHei UI",Helvetica,sans-serif;
+  line-height: 1;
+  font-size: 12px;
+}
+li{
+  list-style-type: none;
+}

@@ -1,0 +1,118 @@
+@function a($px, $base-font-size: 204.8px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return a($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+@function s($px){
+  @return ($px/2);
+}
+
+@mixin font-dpr($font-size){
+  font-size: $font-size;
+
+  [data-dpr="2"] & {
+    font-size: $font-size * 2;
+  }
+
+  [data-dpr="3"] & {
+    font-size: $font-size * 3;
+  }
+}
+@mixin box-sizing ($sizing) {
+  -webkit-box-sizing:$sizing;
+  -moz-box-sizing:$sizing;
+  box-sizing:$sizing;
+}
+
+@mixin transform($x) {
+  transform: $x;
+  -ms-transform: $x;
+  -moz-transform: $x;
+  -webkit-transform: $x;
+  -o-transform: $x;
+}
+@mixin flexBox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+@mixin flex($x){
+  flex: $x;
+  -webkit-flex: $x;
+  -ms-flex: $x;
+  -moz-flex: $x;
+}
+@mixin justify-content($x) {
+  justify-content: $x;
+  -webkit-justify-content: $x;
+  -moz-justify-content: $x;
+}
+@mixin align-self($x) {
+  align-self: $x;
+  -webkit-align-self: $x;
+}
+@mixin Center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%,-50%))
+}
+@mixin appearance($x){
+  appearance:$x;
+  -moz-appearance:$x;
+  -webkit-appearance:$x;
+}
+@mixin flex-direction($x) {
+  flex-direction: $x;
+  -webkit-flex-direction: $x;
+  -ms-flex-direction: $x;
+  -moz-flex-direction: $x;
+}
+@mixin flex-flow($x) {
+  flex-flow: $x;
+  -webkit-flex-flow: $x;
+  -ms-flex-flow: $x;
+  -moz-flex-flow: $x;
+}
+@mixin align-content($x) {
+  align-content:$x;
+  -webkit-align-content: $x;
+}
+@mixin order($x) {
+  order: $x;
+  -moz-order: $x;
+  -webkit-order: $x;
+}
+
+@mixin transition($x) {
+  transition: $x;
+  -moz-transition: $x;
+  -webkit-transition: $x;
+  -o-transition: $x;
+}
+@mixin animation($x) {
+  animation: $x;
+  -webkit-animation: $x;
+}
+
+@mixin box-shadow($x) {
+  box-shadow: $x;
+  -webkit-box-shadow: $x;
+  -moz-box-shadow: $x;
+}
+@mixin flex-wrap($x) {
+  flex-wrap: $x;
+  -webkit-flex-wrap: $x;
+}
+@mixin align-items($x) {
+  align-items: $x;
+  -webkit-align-items: $x;
+}
